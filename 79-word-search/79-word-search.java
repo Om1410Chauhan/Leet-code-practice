@@ -1,38 +1,31 @@
 class Solution {
-     static boolean[][] visited;
     public boolean exist(char[][] board, String word) {
-        visited = new boolean[board.length][board[0].length];
-        
-        for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < board[i].length; j++){
-                if((word.charAt(0) == board[i][j]) && search(board, word, i, j, 0)){
-                    return true;
-                }
+        int row=board.length;
+        int col=board[0].length;
+        boolean[][] visited=new boolean[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+               if((word.charAt(0)==board[i][j]) && wordSearch(i,j,word,board,visited,0)){
+                   return true;
+               }  
             }
         }
-        
         return false;
+        
     }
-    
-    private boolean search(char[][]board, String word, int i, int j, int index){
-        if(index == word.length()){
+    boolean wordSearch(int i,int j,String word,char[][] board,boolean [][] visited,int index){
+        if(word.length()==index){
             return true;
         }
-        
-        if(i >= board.length || i < 0 || j >= board[i].length || j < 0 || board[i][j] != word.charAt(index) || visited[i][j]){
+        if(i<0 || i>=board.length || j<0 || j>=board[0].length || visited[i][j]|| board[i][j]!=word.charAt(index)){
             return false;
         }
-        
-        visited[i][j] = true;
-        if(search(board, word, i-1, j, index+1) || 
-           search(board, word, i+1, j, index+1) ||
-           search(board, word, i, j-1, index+1) || 
-           search(board, word, i, j+1, index+1)){
+        visited[i][j]=true;
+        if(wordSearch(i+1,j,word,board,visited,index+1)||wordSearch(i-1,j,word,board,visited,index+1)
+          || wordSearch(i,j+1,word,board,visited,index+1) || wordSearch(i,j-1,word,board,visited,index+1) ){
             return true;
         }
-        
-        visited[i][j] = false;
+        visited[i][j]=false;
         return false;
-        
     }
 }
