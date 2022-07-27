@@ -75,7 +75,7 @@ class Solution {
    public void helper(char[][] board, List<List<String>> allBoards, int col) {
        if(col == board.length) {
            saveBoard(board, allBoards);
-           return;
+           return ;
        }
       
        for(int row=0; row<board.length; row++) {
