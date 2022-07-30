@@ -3,10 +3,9 @@ class Solution {
         if(s.length()!=t.length()){
             return false;
         }
-        if(s.length()==0 || t.length()==0){
-            return false;
-        }
+       
         char[] array=new char[26];
+        // here by wrting c:s.toCharArray() we are  directly selecting the values of char array
         for(char c:s.toCharArray()){
             array[c-'a']++;
         }
