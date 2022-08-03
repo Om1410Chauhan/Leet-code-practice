@@ -1,4 +1,5 @@
 class Solution {
+    /*
     int function(char c){
         if(c=='L'){
             return -1;
@@ -32,5 +33,34 @@ class Solution {
             return true;
         }
         return false;
+*/
+    public boolean judgeCircle(String moves){
+       int l=0,u=0,r=0,d=0;
+        char[] array=moves.toCharArray();
+        for(char c:array){
+            switch(c){
+                case 'U':{u++;
+                          break;
+                         }
+                case 'D':{
+                    d++;
+                    break;
+                    }
+                case 'R':{
+                    r++;
+                    break;
+                }    
+                case 'L':{
+                    l++;
+                    break;
+                }    
+            }
+          
+            
+        }
+          if(l==r  && u==d){
+                return true;
+            }
+            return false;
     }
 }
