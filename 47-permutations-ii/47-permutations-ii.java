@@ -18,8 +18,8 @@ class Solution {
             current.add(nums[i]);
             visited[i]=true;
             permuteUniqueR(li,nums,current,visited);
+             visited[i]=false;
             current.remove(current.size()-1);
-            visited[i]=false;
         }
     }
 }
