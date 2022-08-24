@@ -20,7 +20,7 @@ class Solution {
         int n=array.length;
         int prev=array[0];
         int prev2=0;
-        for(int i=0;i<n;i++){
+        for(int i=1;i<n;i++){
             int take=array[i];
             if(i>1){
                 take+=prev2;
