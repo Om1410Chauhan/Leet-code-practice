@@ -1,6 +1,6 @@
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
-        int[] array=new int[26];
+           int[] array=new int[26];
         for(char ch:magazine.toCharArray()){
             
             array[ch-'a']++;
@@ -14,5 +14,5 @@ class Solution {
         }
     
     return true;
-                     }
+    }
 }
