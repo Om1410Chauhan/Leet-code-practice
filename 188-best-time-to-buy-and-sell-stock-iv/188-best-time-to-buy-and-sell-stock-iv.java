@@ -1,4 +1,6 @@
 class Solution {
+    // using tabulation
+    
     public int maxProfit(int k, int[] prices) {
         int n=prices.length;
         int dp[][][] =new int[prices.length+1][2][k+1];
