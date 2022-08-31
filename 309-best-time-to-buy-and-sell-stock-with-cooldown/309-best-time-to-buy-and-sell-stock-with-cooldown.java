@@ -41,10 +41,14 @@ class Solution {
         dp[prices.length][0]=0;
         dp[prices.length][1]=0;
         for(int i=n-1;i>=0;i--){
+            for(int buy=0;buy<=1;buy++){
+                if(buy==1){
                   dp[i][1]=Math.max(-prices[i]+dp[i+1][0],0+dp[i+1][1]);
-                                
+                }
+                 if(buy==0){
                 dp[i][0]=Math.max(prices[i]+dp[i+2][1],0+dp[i+1][0]);
-            
+                 }
+            }
         }
         return  dp[0][1];
       }
