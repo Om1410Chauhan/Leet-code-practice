@@ -33,7 +33,9 @@ class Solution {
         
     }
     */
+    
     // using tabulation
+    /*
     public int lengthOfLIS(int[] nums){
         int n=nums.length;
         // n+1 for index becaus we are assigning dp[n][n+1]==0
@@ -59,5 +61,28 @@ class Solution {
         return dp[0][-1+1];
 
     }
-    
+    */
+    // space optimised solution
+     public int lengthOfLIS(int[] nums){
+         int n=nums.length;
+         int[] next=new int[n+1];
+         int[] curr=new int[n+1];
+         
+          for(int current=n-1;current>=0;current--){
+            // we can write n-1 but as we know prev is always 1 less than current
+            for(int prev=current-1;prev>=-1;prev--){
+                       int take=0;
+                       if(prev==-1 || nums[current]>nums[prev]){
+                           // in prev current+1 beacuse we have to change co-ordinate of previous
+                         take=1+next[current+1];
+                      }
+                     int nonTake=0;
+                // here we do prev+1 beacuse -1 doesn't exsist
+                       nonTake=0+next[prev+1];
+                      curr[prev+1]=Math.max(take,nonTake);
+            }
+              next=curr;
+        }
+         return next[-1+1];
+     }
 }
