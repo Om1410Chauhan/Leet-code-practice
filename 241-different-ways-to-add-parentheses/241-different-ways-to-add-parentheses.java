@@ -96,7 +96,7 @@ class Solution {
             return memo.get(expression);
         }
         
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
         
         for(int i = 0; i < expression.length(); i++){
             char c = expression.charAt(i);
