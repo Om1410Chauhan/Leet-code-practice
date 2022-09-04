@@ -53,9 +53,4 @@ class Solution {
         return  dp[0][1];
       }
 }
- /*for(int ind = n-1 ; ind>= 0 ; ind--)
-        {
-            dp[ind][1] = Math.max(-prices[ind]+dp[ind+1][0] , dp[ind+1][1]);
-            dp[ind][0] = Math.max(prices[ind]+dp[ind+2][1] , dp[ind+1][0]);
-        }
-        */
+ 
