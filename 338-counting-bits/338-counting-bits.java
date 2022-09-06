@@ -3,6 +3,8 @@ class Solution {
     // the pattern is that for even numbers number of 1 is qual to n/2
     // and for odd it is 1+n/2;
     public int[] countBits(int n) {
+        // using memoiazation
+        /*
         int [] ans=new int[n+1];
         int[] dp=new int[n+1];
         for(int i=0;i<=n;i++){
@@ -23,4 +25,13 @@ class Solution {
             return dp[n]=1+helper(n/2,dp);
         }
     }
+    */
+        // using tabulation
+         int [] ans=new int[n+1];
+        ans[0]=0;
+        for(int i=1;i<=n;i++){
+            ans[i]=ans[i/2]+i%2;
+        }
+        return ans;
+}
 }
