@@ -1,5 +1,5 @@
 class Solution {
-    // we declared it outside function because if it is defined inside function whenever function is called new hahshmap is always defined
+ // we declared it outside function because if it is defined inside function whenever function is called new hahshmap is always defined
     private Map<String,Boolean> map=new HashMap();
     public boolean wordBreak(String s, List<String> wordDict) {
         
@@ -18,8 +18,6 @@ class Solution {
             }
         }
         map.put(s,false);
-        return false;
-        
-        
+        return false;        
     }
 }
