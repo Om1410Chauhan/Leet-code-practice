@@ -1,6 +1,6 @@
 class Solution {
     // i this question we have to recognise a pattern
-    // the pattern is that for even numbers number of 1 is qual to n/2
+    // the pattern is that for even numbers number of 1 is equal to n/2
     // and for odd it is 1+n/2;
     public int[] countBits(int n) {
         // using memoiazation
