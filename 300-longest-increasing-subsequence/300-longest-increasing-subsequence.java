@@ -1,5 +1,5 @@
 class Solution {
-    /*
+        /*
     // using memoiazation
     public int lengthOfLIS(int[] nums) {
         if(nums.length==0){
@@ -84,5 +84,6 @@ class Solution {
               next=curr;
         }
          return next[-1+1];
-     }
+        
+    }
 }
